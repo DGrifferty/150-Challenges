@@ -8,7 +8,7 @@ while True:
     try:
         numbers = input('Please enter 3 numbers: ')
         numbers = numbers.split(' ')
-        if len(numbers) !=3:
+        if len(numbers) != 3:
             continue
         for index, value in enumerate(numbers):
             numbers[index] = float(value)
