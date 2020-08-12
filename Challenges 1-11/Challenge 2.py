@@ -16,7 +16,7 @@ from typing import List
 # Solution 2:
 while True:
     try:
-        name: str = input('Please enter your full name')
+        name: str = input('Please enter your full name: ')
         name: List[str] = name.split(' ')
 
         first_name: str = name[0]
