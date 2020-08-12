@@ -14,4 +14,12 @@ def check_num(prompt: str) -> float:
         except Exception as e:
             print(e)
 
+if __name__ =='__main__':
+    request = 'Enter a number you would like to see the times table ' \
+              'for: '
+
+    num = check_num(request)
+
+    for i in range(num + 1):
+        print(f'{i} * {num} = {i*num}')
 

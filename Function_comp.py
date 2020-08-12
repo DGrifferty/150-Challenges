@@ -8,17 +8,17 @@ def check_input_str_num(prompt: str) -> Tuple[str, int]:
         try:
             user_input = input(prompt)
 
-            user_input = user_input.split(' ')
+            user_input = user_input.split(', ')
 
             if len(user_input) != 2:
                 raise Exception('Please enter your name and a number'
-                                'separated by a space.')
+                                'separated by - \', \' (a comma and'
+                                'space)')
 
             return user_input[0], int(user_input[1])
 
         except Exception as e:
             print(e)
-
 
 def check_num(prompt: str) -> float:
     """Function to check if users input is a num"""
@@ -35,7 +35,7 @@ def check_num(prompt: str) -> float:
 
 def input_checker(string):
     yes_list = ['yes', 'y', '1']
-    no_list = ['no', 'n']
+    no_list = ['no', 'n', '0']
     while True:
         try:
 
