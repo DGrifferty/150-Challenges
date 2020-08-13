@@ -8,6 +8,7 @@
 
 from typing import List
 
+
 def yes_no_checker(string):
     yes_list = ['yes', 'y', '1']
     no_list = ['no', 'n', '0']
@@ -27,13 +28,36 @@ def yes_no_checker(string):
             print(e)
 
 
+def print_list(lst: List[float]):
+    string = ''
+    for i in range(len(lst)):
+
+        if i == len(lst) - 1:
+            string += f'{lst[i]}.'
+        else:
+            string += f'{lst[i]}, '
+
+        if i > 0:
+            if i % 10 == 0:
+                string += '\n'
+
+
+
+    return string
+
+
 if __name__ == '__main__':
 
+    invite_list = list()
 
     while True:
-        
 
+        name = input('Who would you like to invite to your party?: ')
+        invite_list.append(name.title())
+        print(f'{name.title()} has now been invited.')
+        if not yes_no_checker('Would you like to invite '
+                              'someone else?: '):
+            break
 
+    print(f'The following have been invited: {print_list(invite_list)}')
 
-    print(f'After adding the following:\n{print_list(summed)}')
-    print(f'The final total is: {sum(summed)}')
