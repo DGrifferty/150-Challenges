@@ -6,8 +6,6 @@
 # value that is between 10 and 20 and then display the message
 # “Thank you”
 
-import random
-
 
 def get_num(prompt: str) -> int:
     """Function to check if users input is an integer"""
