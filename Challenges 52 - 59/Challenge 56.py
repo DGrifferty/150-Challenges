@@ -21,7 +21,7 @@ def get_num(prompt: str) -> int:
 
 comp_choice = random.randint(1, 10)
 
-dev = True
+dev = False
 if dev:
     print(comp_choice)
 
