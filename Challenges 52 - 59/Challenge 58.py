@@ -68,6 +68,22 @@ def get_difficulty():
             print(e)
 
 
+def get_mode() -> int:
+
+    mode_dict = {
+        'Rush mode - race against a timer': ['1'],
+        'Slow mode - move at your own pace': ['2'],
+        'Mix it up - a mix of slow and rush mode': ['3']
+    }
+
+    for mode, mode_number in mode_dict.items():
+        print(mode, ' - ', mode_number)
+
+    mode_choice = get_num_int('What mode would you like to play?: ')
+
+    return mode_choice
+
+
 def get_lower_higher_nums(difficulty: str, symbol: str)\
         -> Tuple[int, int]:
     num_dif_dict = {
@@ -105,9 +121,23 @@ def get_equation(difficulty: str = 'medium') -> Tuple[str, float]:
     return equation, answer
 
 
+def rush_mode():
+    pass
+
+
+def slow_mode():
+    pass
+
+
+def mix_it_up_mode():
+    pass
+
+
 if __name__ == '__main__':
 
     correct_count = 0
+    tolerance = 0.01
+    time_list = list()
 
     num_questions = get_num_int('How many questions would you like? ')
     difficulty = get_difficulty()
@@ -124,8 +154,9 @@ if __name__ == '__main__':
         user_answer = get_num_float(question)
 
         time_took = time.time() - start_time
+        time_list.append(time_took)
 
-        if user_answer == round(answer, 2):
+        if answer + tolerance > user_answer > answer - tolerance:
             print('correct!')
             print(f'You took - {time_took}s')
             correct_count += 1
@@ -138,18 +169,20 @@ if __name__ == '__main__':
             #     user_answer = get_num(question)
 
     print('------------------------------')
-    print(f'Out of {num_questions} you got {correct_count} correct!'
+    print(f'You got {correct_count} out of {num_questions}!'
           '\n'
-          f'That is {(correct_count / num_questions) * 100}%!')
+          f'Scoring {(correct_count / num_questions) * 100}%!')
+    print(f'You took an average time of '
+          f'{sum(time_list)/num_questions:.2f}s '
+          f'to answer the questions.')
 
 
-# todo: sort out issues with float answers - user inputs 1.33 not correct
-# todo: as comp answer stores it as 1.33
-# Todo: Create timer to tell user how long it took
-# todo: time each question + average at the end
-# todo: create mode where user rushes against timer
+
+
+
+# todo: add different modes
 # todo: add square, square root functionality etc.
 # todo: create gui
 # todo: create file to store users times and difficulty date they completed
 # todo: questions and add this to section on gui for them to see
-# todo: improvment
+# todo: improvment via graphs
