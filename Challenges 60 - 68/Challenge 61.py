@@ -16,6 +16,8 @@ def draw_triangle(side_length: int = 100) -> None:
 
 
 if __name__ == '__main__':
+    
+    turtle.title('Drawing a triangle')
 
     sides = 400
 
