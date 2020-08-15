@@ -22,7 +22,6 @@ def draw_octagon(side_length: int = 100, random_colours = True):
 
     for i in range(8):
         if random_colours:
-            print(i)
             if i <= 6:  # Prevents calculating fill colours when they
                 #  are not in use
                 outline = []
