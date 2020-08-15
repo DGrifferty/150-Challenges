@@ -9,6 +9,8 @@ import turtle
 
 # turtle.circle(100) # Built in method
 
+turtle.speed(0)
+
 for i in range(360):
     # Much slower
     turtle.forward(1)
