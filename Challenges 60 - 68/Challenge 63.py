@@ -59,8 +59,10 @@ if __name__ == '__main__':
     scr = turtle.Screen()
     scr.colormode(255)
     turtle.pensize(2)
+    turtle.title('Drawing a square of squares')
+    turtle.speed(0)
 
-    square_of_squares(2)
+    square_of_squares(3)
 
     # rotated_squares()
 
