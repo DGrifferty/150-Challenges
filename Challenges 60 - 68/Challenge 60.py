@@ -17,6 +17,9 @@ def draw_square(side_length: int = 100) -> None:
 
 if __name__ == '__main__':
 
+    turtle.title('Drawing a square')
+    turtle.speed(0)
+
     draw_square()
 
     turtle.exitonclick()
