@@ -132,7 +132,9 @@ if __name__ == '__main__':
     screen_width, screen_height = 1024, 600
     scr.setup(screen_width, screen_height)
     scr.colormode(255)
+    turtle.title('Drawing 123')
     turtle.speed(0)
+
 
     draw_random(20)
 
