@@ -53,6 +53,9 @@ if __name__ == '__main__':
     scr = turtle.Screen()
     scr.colormode(255)
     turtle.pensize(2)
+    turtle.title('Drawing a five pointed star')
+    turtle.speed(0)
+
 
     # draw_clover()
     
