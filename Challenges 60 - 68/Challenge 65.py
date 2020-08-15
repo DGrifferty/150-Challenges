@@ -10,6 +10,7 @@ import turtle
 import random
 from typing import Tuple
 
+
 def random_colour_selector() -> None:
     outline, fill = [], []
 
@@ -22,7 +23,6 @@ def random_colour_selector() -> None:
 
 def random_move(line_lengths: Tuple[int, int] = (10, 200),
                 angle_sizes: Tuple[int, int] = (5, 355)) -> None:
-
     turtle.forward(random.randint(line_lengths[0], line_lengths[1]))
     left_or_right = random.randint(0, 1)
 
@@ -36,10 +36,9 @@ def random_move(line_lengths: Tuple[int, int] = (10, 200),
 
 
 def fix_turtle_pos_rand(rand: bool = True, cent_both: bool = True):
-
     x, y = turtle.pos()
 
-    if abs(x) > screen_width/2:
+    if abs(x) > screen_width / 2:
         turtle.penup()
 
         if rand:
@@ -53,7 +52,7 @@ def fix_turtle_pos_rand(rand: bool = True, cent_both: bool = True):
 
         turtle.pendown()
 
-    if abs(y) > screen_height/2:
+    if abs(y) > screen_height / 2:
         turtle.penup()
 
         if rand:
@@ -67,13 +66,12 @@ def fix_turtle_pos_rand(rand: bool = True, cent_both: bool = True):
         turtle.pendown()
 
 
-
 def random_pen_thickness() -> None:
-    turtle.pensize(random.randint(1, 10))
+    turtle.pensize(random.randint(1, 6))
 
 
-def draw_random(number_of_lines: int = 100, pen_up: bool = False) -> None:
-
+def draw_random(number_of_lines: int = 100,
+                pen_up: bool = False) -> None:
     for i in range(number_of_lines):
 
         random_colour_selector()
@@ -87,22 +85,63 @@ def draw_random(number_of_lines: int = 100, pen_up: bool = False) -> None:
             fix_turtle_pos_rand(False, False)
             turtle.pendown()
 
-def draw_123() -> None:
 
+def draw_123() -> None:
+    turtle.left(90)
+    turtle.forward(100)
+    # 1 drawn
+
+    turtle.right(90)
+    turtle.penup()
+    turtle.forward(50)
+    turtle.pendown()
+    # 1 and 2 separated
+
+    turtle.forward(75)
+    turtle.right(90)
+    turtle.forward(50)
+    turtle.right(90)
+    turtle.forward(75)
+    turtle.left(90)
+    turtle.forward(55)
+    turtle.left(90)
+    turtle.forward(75)
+    # 2 drawn
+
+    turtle.penup()
+    turtle.forward(50)
+    turtle.pendown()
+    # 2 and 3 separated
+
+    turtle.forward(75)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(45)
+    turtle.left(180)
+    turtle.forward(45)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(75)
+    # 3 drawn
 
 
 if __name__ == '__main__':
-
     scr = turtle.Screen()
     screen_width, screen_height = 1024, 600
     scr.setup(screen_width, screen_height)
     scr.colormode(255)
     turtle.speed(0)
 
+    draw_random(20)
 
-    draw_random(1000, True)
+    turtle.goto(0, 0)
+
+    draw_123()
+
+    turtle.hideturtle()
 
     turtle.exitonclick()
-
 
 # todo: create lines out of cursor
