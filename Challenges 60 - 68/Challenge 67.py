@@ -55,7 +55,10 @@ if __name__ == '__main__':
     screen_width, screen_height = 1024, 600
     scr.setup(screen_width, screen_height)
     scr.colormode(255)
+
+    turtle.title('Drawing a pattern of octagons')
     turtle.speed(0)
+
     
     draw_pattern()
 
