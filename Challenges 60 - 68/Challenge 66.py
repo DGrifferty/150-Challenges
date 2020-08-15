@@ -44,6 +44,10 @@ if __name__ == '__main__':
     scr = turtle.Screen()
     scr.colormode(255)
     turtle.pensize(10)
+
+    turtle.title('Drawing an octagon')
+    turtle.speed(0)
+
     
     draw_octagon()
 
