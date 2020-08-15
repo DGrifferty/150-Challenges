@@ -7,7 +7,7 @@ import turtle
 
 
 def draw_square(side_length: int = 100) -> None:
-    turtle.color('black', 'red')
+    turtle.color('black', 'red')  # outline, fill
     turtle.begin_fill()
     for i in range(4):
         turtle.forward(side_length)
