@@ -33,6 +33,8 @@ if __name__ == '__main__':
     for index, value in enumerate(nums):
         print(value)
 
+    # Using numpy module
+
 
     npnums = np.array(create_random_list(length=5), dtype = np.int32)
 
