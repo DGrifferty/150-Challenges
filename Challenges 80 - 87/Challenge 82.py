@@ -5,23 +5,77 @@
 
 # very similar to challenge 74
 
+from typing import List
+
+
+def print_list(lst: List):
+    """prints a list in a cleaner way"""
+
+    string = ''
+
+    for i in range(len(lst)):
+
+        if i == len(lst) - 1:
+            string += f'{lst[i]}.'
+        else:
+            string += f'{lst[i]}, '
+
+        if i > 0:
+            if i % 10 == 0:
+                string += '\n'
+
+    print(string)
+
+
+def get_num_int(prompt: str) -> int:
+    """Function to check if users input is an integer"""
+
+    while True:
+        try:
+            number = int(input(prompt))
+
+            return number
+
+        except Exception as e:
+            print(e)
+
+
+def get_slice(sl):
+    
+    min, max = 0, len(sl)
+    
+    while True:
+        
+        start = get_num_int('Enter starting number of slice: ')
+
+        if min <= start <= max:
+            break
+        else:
+            print(f'Please enter a number between {min} and {max}')
+            
+    
+    while True:
+        
+        end = get_num_int('Enter end number of slice: ')
+        
+        if start <= end <= max:
+            break
+        else:
+            print(f'Please enter a number between {min} and {max}')
+
+    return sl[start: end]
+        
+
+if __name__ == '__main__':
+    
+    poem = 'line from poem'
+
+    print(poem)
+
+    print_list(get_slice(poem))
+    
+    
 
 
 
-while True:
-    start = get_num_int('Enter starting number: ')
 
-    if 0 <= start <= 4:
-        break
-    else:
-        print('Please enter a number between 0 and 4')
-
-while True:
-    end = get_num_int('Enter an end number: ')
-
-    if 5 <= end <= 9:
-        break
-    else:
-        print('Please enter a number between 5 and 9')
-
-print(print_list(colour_list[start:end]))
