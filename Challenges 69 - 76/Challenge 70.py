@@ -22,6 +22,7 @@ def get_input_tuple(tp: Tuple[str], prompt: str) -> bool:
         except Exception as e:
             print(e)
 
+
 def get_num_int(prompt: str) -> int:
     """Function to check if users input is an integer"""
 
