@@ -25,19 +25,19 @@ if __name__ == '__main__':
 
     # Using built in array module
 
-    # numar = ar.array('i')
-    #
-    # for i in range(5):
-    #     while True:
-    #         user_input = get_num_int(f'Enter number {i+1}: ')
-    #         if 10 > user_input or 20 < user_input:
-    #             print('Please enter a number between 10 and 20')
-    #         else:
-    #             numar.append(user_input)
-    #             break
-    #
-    # print('Thank you.')
-    # print(numar)
+    numar = ar.array('i')
+
+    for i in range(5):
+        while True:
+            user_input = get_num_int(f'Enter number {i+1}: ')
+            if 10 > user_input or 20 < user_input:
+                print('Please enter a number between 10 and 20')
+            else:
+                numar.append(user_input)
+                break
+
+    print('Thank you.')
+    print(numar)
 
     # Using numpy module
 
