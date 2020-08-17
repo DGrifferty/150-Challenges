@@ -8,6 +8,7 @@ import array as ar
 import numpy as np
 from typing import List
 
+
 def create_random_list(length: int = 50, lowest_num: int = 0,
                        highest_num: int = 90) -> List[int]:
     """Returns a random list at a user set len, and lower and upper
