@@ -41,8 +41,6 @@ def print_list(lst: List[float]):
             if i % 10 == 0:
                 string += '\n'
 
-
-
     return string
 
 
