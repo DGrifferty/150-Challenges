@@ -405,8 +405,8 @@ def create_random_list(len: int = 50, lowest_num: int = 0,
     return random_list
 
 
-def print_list(lst: List[float]):
-    """Prints a list in a cleaner way"""
+def print_list(lst: List):
+    """returns a string allowing you to print a list in a cleaner way"""
 
     string = ''
 
