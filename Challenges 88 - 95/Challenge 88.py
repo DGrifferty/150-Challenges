@@ -23,12 +23,12 @@ def get_num_int(prompt: str) -> int:
 if __name__ == '__main__':
 
     # # Using built in array module
-    # nums = ar.array('i')
-    # for i in range(5):
-    #     nums.append(get_num_int(f'Enter number {i + 1}: '))
-    # print(sorted(nums, reverse=True))
+    nums = ar.array('i')
+    for i in range(5):
+        nums.append(get_num_int(f'Enter number {i + 1}: '))
+    print(sorted(nums, reverse=True))
 
-    # Using numpy
+    # Using numpy module
 
     nums = np.array([], dtype=np.int32)
     for i in range(5):
