@@ -48,25 +48,6 @@ def return_index(tp, element) -> List[int]:
     return indexes
 
 
-def print_list(lst: List):
-    """prints a list in a cleaner way"""
-
-    string = ''
-
-    for i in range(len(lst)):
-
-        if i == len(lst) - 1:
-            string += f'{lst[i]}.'
-        else:
-            string += f'{lst[i]}, '
-
-        if i > 0:
-            if i % 10 == 0:
-                string += '\n'
-
-    print(string)
-
-
 if __name__ == '__main__':
 
     # Using built in array module
