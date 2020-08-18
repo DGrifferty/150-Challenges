@@ -12,4 +12,4 @@ lst = [[2, 5, 8],
        [1, 6, 9],
        [4, 2, 0]]
 
-print(lst[1][0])  # 3
+print(lst[1][0])  # row, column, prints 3
