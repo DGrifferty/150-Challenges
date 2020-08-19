@@ -52,24 +52,29 @@ def print_dic(dic: Dict) -> str:
 
     print(string)
 
+
 if __name__ =='__main__':
 
-    name_shoe_size = dict()
+    name_age_size = dict()
 
     for i in range(4):
 
-        name = input(f'Enter name number {i+1}')
+        name = input(f'Enter name number {i+1}: ')
 
-        name_shoe_size[name] = get_num_int('Enter their age: '),\
-                               get_num_int('Enter their shoe size: ')
+        name_age_size[name] = {'Age': get_num_int('Enter their age: '),\
+                               'Shoe size': get_num_int('Enter their '
+                                                        'shoe size: ')}
 
-    print_dic(name_shoe_size)
+    print_dic(name_age_size)
 
     while True:
 
         name = input('Enter the name: ')
 
+        if name in name_age_size:
 
+            print_dic(name_age_size[name])
+            break
 
 
 
