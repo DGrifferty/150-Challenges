@@ -56,15 +56,12 @@ if __name__ =='__main__':
 
     name_shoe_size = dict()
 
-    ####### need to get their age too!
-
     for i in range(4):
 
-        name_shoe_size[get_num_int('Enter their shoe size size')] = \
-            input(f'Enter name number {i+1}')
+        name = input(f'Enter name number {i+1}')
 
-
-    name_shoe_size = {v:k for k,v in name_shoe_size.items}
+        name_shoe_size[name] = get_num_int('Enter their age: '),\
+                               get_num_int('Enter their shoe size: ')
 
     print_dic(name_shoe_size)
 
