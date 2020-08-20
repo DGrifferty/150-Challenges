@@ -77,7 +77,3 @@ if __name__ =='__main__':
 
             print_dic(name_age_size[name])
             break
-
-
-
-
