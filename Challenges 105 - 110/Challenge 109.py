@@ -34,9 +34,8 @@ def remove_n(lst: List[str]) -> List[str]:
 	"""removes \\n from end of a all elements in list and returns
 	string"""
 
-	for index, element in enumerate(lst):  # To removing /n
-		print(element[-1:])
-		if element[-1:] == '\n':
+	for index, element in enumerate(lst):  # To remove /n
+		if element[-1:-2:-1] == '\n':  # Test if last two characters are "\n"
 			lst[index] = element[:-1]
 	return lst
 
