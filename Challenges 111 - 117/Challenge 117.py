@@ -79,23 +79,7 @@ def get_difficulty():
             print(e)
 
 
-def get_mode() -> int:
-
-    mode_dict = {
-        'Rush mode - race against a timer': ['1'],
-        'Slow mode - move at your own pace': ['2'],
-        'Mix it up - a mix of slow and rush mode': ['3']
-    }
-
-    for mode, mode_number in mode_dict.items():
-        print(mode, ' - ', mode_number)
-
-    mode_choice = get_num_int('What mode would you like to play?: ')
-
-    return mode_choice
-
-
-def get_lower_higher_nums(difficulty: str, symbol: str)\
+def get_lower_higher_nums(difficulty: str, symbol: str) \
         -> Tuple[int, int]:
     num_dif_dict = {
         # + -, * /
@@ -110,7 +94,6 @@ def get_lower_higher_nums(difficulty: str, symbol: str)\
 
 
 def get_equation(difficulty: str = 'medium') -> Tuple[str, float]:
-
     symbol = get_symbol()
 
     lowest_num, highest_num = get_lower_higher_nums(difficulty, symbol)
@@ -132,26 +115,18 @@ def get_equation(difficulty: str = 'medium') -> Tuple[str, float]:
     return equation, answer
 
 
-def rush_mode():
-    pass
-
-
-def slow_mode():
-    pass
-
-
-def mix_it_up_mode():
-    pass
-
-
 if __name__ == '__main__':
-
     correct_count = 0
     tolerance = 0.01
     time_list = list()
 
+    User_name = input('Enter your name: ')
+
     num_questions = get_num_int('How many questions would you like? ')
     difficulty = get_difficulty()
+
+    with open('UserResults.csv', 'a') as f:
+        f.write(f'{User_name},  {num_questions}, {difficulty} \n')
 
     for i in range(num_questions):
 
@@ -161,28 +136,31 @@ if __name__ == '__main__':
             print(answer)
 
         start_time = time.time()
-
         user_answer = get_num_float(question)
-
         time_took = time.time() - start_time
         time_list.append(time_took)
 
         if answer + tolerance > user_answer > answer - tolerance:
-            print('correct!')
+            print('Correct!')
             print(f'You took - {time_took:.2f}s')
             correct_count += 1
+            with open('UserResults.csv', 'a') as f:
+                f.write(f'{question}, '
+                        f'{answer}, {user_answer}, correct, '
+                        f'{correct_count}/{len(time_list)}, {time_took:.2f}s\n')
             continue
         else:
             print('Incorrect')
             print(f'You took - {time_took:.2f}s')
-            # while user_answer != answer:
-            #     print('incorrect try again!')
-            #     user_answer = get_num(question)
+            with open('UserResults.csv', 'a') as f:
+                f.write(f'{question}, '
+                        f'{answer}, {user_answer}, correct, '
+                        f'{correct_count}/{len(time_list)}, {time_took:.2f}s\n')
 
     print('------------------------------')
     print(f'You got {correct_count} out of {num_questions}!'
           '\n'
           f'Scoring {(correct_count / num_questions) * 100}%!')
     print(f'You took an average time of '
-          f'{sum(time_list)/num_questions:.2f}s '
+          f'{sum(time_list) / num_questions:.2f}s '
           f'to answer the questions.')
