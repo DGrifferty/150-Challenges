@@ -31,7 +31,7 @@ def _button1_command(x, y):
     button1['fg'] = _random_rgb()
 
 
-window.title('Title')
+window.title('Print name')
 window.geometry('400x400')
 
 button1x, button1y = 240, 50
