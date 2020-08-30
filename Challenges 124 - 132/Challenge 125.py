@@ -25,7 +25,7 @@ def _random_rgb():
     return "#%02x%02x%02x" % rgb
 
 
-def _rgb(rgb:tuple):
+def _rgb(rgb: tuple):
     return "#%02x%02x%02x" % rgb
 
 
