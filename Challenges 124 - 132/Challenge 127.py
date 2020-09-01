@@ -14,6 +14,7 @@ def _add_to_list_button():
 def _reset_button():
     answer_text['text'] = 0
 
+
 window = tk.Tk()
 window.geometry('400x400')
 window.title('Add')
@@ -32,4 +33,4 @@ number_textbox.focus()
 answer_text = tk.Message(text=0)
 answer_text.place(x=40, y=55)
 
-window.mainloop() 
+window.mainloop()
