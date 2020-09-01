@@ -7,30 +7,33 @@
 import tkinter as tk
 
 
-def _add_to_list_button():
-    pass
+def _add_to_list_cmd():
+    name = name_textbox.get()
+    name_list.insert('end', name)
+    name_textbox.delete(0, 'end')
 
 
-def _reset_button():
-    answer_text['text'] = 0
+def _reset_list_cmd():
+    name_list.delete(0, 'end')
 
 
 window = tk.Tk()
-window.geometry('400x400')
-window.title('Add')
+window.title('List of names')
+window.geometry('500x500')
 
-add_button = tk.Button(text='Add', command=_add_to_list_button)
-add_button.place(x=100, y=20)
+name_textbox = tk.Entry(text='', justify='center')
+name_textbox.place(x=100, y=150)
 
-reset_button = tk.Button(text='Reset', command=_reset_button)
-reset_button.place(x=100, y=50)
+name_list = tk.Listbox()
+name_list.place(x=100, y=250)
 
-number_textbox = tk.Entry(text='')
-number_textbox.place(x=45, y=20, width=50, height=25)
-number_textbox['justify'] = 'center'
-number_textbox.focus()
+add_to_list_btn = tk.Button(text='Add to list',
+                            command=_add_to_list_cmd)
+add_to_list_btn.place(x=100, y=100)
 
-answer_text = tk.Message(text=0)
-answer_text.place(x=40, y=55)
+reset_list_btn = tk.Button(text='Reset List', command=_reset_list_cmd)
+reset_list_btn.place(x=100, y=200)
 
 window.mainloop()
+
+print('window closed')
