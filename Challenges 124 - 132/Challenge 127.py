@@ -32,6 +32,4 @@ number_textbox.focus()
 answer_text = tk.Message(text=0)
 answer_text.place(x=40, y=55)
 
-window.mainloop()  # Tells tkinter to listen for events like key presses
-#  prevents any code that comes after it from executing until the window
-#  is closed
+window.mainloop() 
