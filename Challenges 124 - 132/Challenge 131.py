@@ -5,7 +5,7 @@
 # they have just created.
 import tkinter as tk
 import datetime
-import tkinter.messagebox
+
 
 def _create_csv_cmd():
     now = datetime.now()
@@ -15,27 +15,28 @@ def _create_csv_cmd():
 
 
 def _clear_list_cmd():
-    num_list.delete(0, 'end')
+    tk_lst.delete(0, 'end')
 
 
 def _send_to_csv_cmd():
     if not file_name_label:
         _create_csv_cmd()
     file_name = file_name_label['text']
+    lst = tk_lst.get(0, 'end')
     with open(file_name, 'w') as f:
-        
-
-
-
+        for value in lst:
+            f.write(f'{value}\n')
 
 
 def _add_to_lst_cmd():
-    pass
+    num = tk_textbox.get()
+    tk_textbox.delete(0, 'end')
 
 
 window = tk.Tk()
 window.title('Create CSV')
 
-
+tk_lst = tk.Listbox()
+tk_textbox = tk.Entry(justify = 'center')
 
 window.mainloop()
