@@ -8,10 +8,10 @@ import datetime
 
 
 def _create_csv_cmd():
-    now = datetime.now()
-    dt = now.strftime("%d/%m/%Y_%H:%M:%S")
+    now = datetime.datetime.now()
+    dt = now.strftime("%d-%m-%Y_%H-%M-%S")
     file_name = f'num_list_{dt}.csv'
-    file_name_label = tk.Label(text=file_name)
+    file_name_msg['text'] = file_name
 
 
 def _clear_list_cmd():
@@ -19,22 +19,27 @@ def _clear_list_cmd():
 
 
 def _send_to_csv_cmd():
-    if not file_name_label:
+    if not file_name_msg['text']:
         _create_csv_cmd()
-    file_name = file_name_label['text']
+        print('Called')
+    file_name = str(file_name_msg['text'])
+    # print(f'msg - {file_name_msg["text"]}')
+    # print(f'file_name = {file_name}')
     lst = tk_lst.get(0, 'end')
-    with open(file_name, 'w') as f:
+    with open(fr'{file_name}', 'w') as f:
         for value in lst:
             f.write(f'{value}\n')
 
 
 def _add_to_lst_cmd():
     num = tk_textbox.get()
+    tk_lst.insert('end', num)
     tk_textbox.delete(0, 'end')
 
 
 window = tk.Tk()
 window.title('Create CSV')
+file_name_msg = tk.Message(text='')
 
 tk_lst = tk.Listbox()
 tk_textbox = tk.Entry(justify='center')
@@ -42,11 +47,14 @@ clear_list_btn = tk.Button(text='Clear', command=_clear_list_cmd)
 send_to_csv_btn = tk.Button(text='Send to csv',
                             command=_send_to_csv_cmd)
 create_csv_btn = tk.Button(text='New csv', command=_create_csv_cmd)
+add_to_lst_btn = tk.Button(text='Add', command=_add_to_lst_cmd)
 
 clear_list_btn.place(x=0, y=0)
 create_csv_btn.place(x=40, y=0)
-send_to_csv_btn.place(x=100, y=0)
-tk_textbox.place(x=0, y=30)
-tk_lst.place(x=0, y = 50)
+send_to_csv_btn.place(x=95, y=0)
+add_to_lst_btn.place(x=130, y=38)
+tk_textbox.place(x=0, y=40)
+tk_lst.place(x=0, y=70)
+file_name_msg.place(x=125, y=100)
 
 window.mainloop()
