@@ -37,6 +37,16 @@ window = tk.Tk()
 window.title('Create CSV')
 
 tk_lst = tk.Listbox()
-tk_textbox = tk.Entry(justify = 'center')
+tk_textbox = tk.Entry(justify='center')
+clear_list_btn = tk.Button(text='Clear', command=_clear_list_cmd)
+send_to_csv_btn = tk.Button(text='Send to csv',
+                            command=_send_to_csv_cmd)
+create_csv_btn = tk.Button(text='New csv', command=_create_csv_cmd)
+
+clear_list_btn.place(x=0, y=0)
+create_csv_btn.place(x=40, y=0)
+send_to_csv_btn.place(x=100, y=0)
+tk_textbox.place(x=0, y=30)
+tk_lst.place(x=0, y = 50)
 
 window.mainloop()
