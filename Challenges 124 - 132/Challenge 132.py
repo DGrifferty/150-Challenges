@@ -77,7 +77,7 @@ def _load_from_csv_cmd():
 
 window = tk.Tk()
 window.title('Create CSV')
-window.geometry('300x300')
+window.geometry('260x290')
 
 file_name_msg = tk.Message(text='')
 tk_lst = tk.Listbox()
