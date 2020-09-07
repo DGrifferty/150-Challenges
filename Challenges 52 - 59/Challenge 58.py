@@ -8,7 +8,7 @@ import random
 from typing import List, Tuple
 import time
 
-dev = True
+dev = False
 
 
 def get_num_int(prompt: str) -> int:
